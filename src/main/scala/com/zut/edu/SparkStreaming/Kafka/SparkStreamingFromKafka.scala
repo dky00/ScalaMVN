@@ -50,7 +50,7 @@ object SparkStreamingFromKafka {
       ConsumerStrategies.Subscribe[String,String](Array(fromTopic),kafkaParams)
     )
 
-    val result = dStream.map(x => x.value()+"------hhh")
+    val result = dStream.map(x => x.value()+"---------")
     result.print()
 
     ssc.start()
